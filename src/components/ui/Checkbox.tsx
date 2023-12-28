@@ -1,5 +1,5 @@
 import { type ChangeEvent, useId } from "react";
-import styles from "./Checkbox.module.css";
+import styles from "@/components/ui/Checkbox.module.css";
 
 type CheckboxProps = {
   label?: string;

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
-import { Checkbox } from "./Checkbox";
+import { Checkbox } from "@/components/ui/Checkbox";
 import "@testing-library/jest-dom";
 
 describe("Checkbox", () => {
