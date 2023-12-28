@@ -1,18 +1,20 @@
 import "@/App.css";
 import { TopBar } from "@/components/TopBar";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/queryClient";
+import { storagePersister, queryClient } from "@/queryClient";
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{ persister: storagePersister }}
+    >
       <div>
         <nav>
           <TopBar />
         </nav>
-        <main></main>
       </div>
-    </QueryClientProvider>
+    </PersistQueryClientProvider>
   );
 }
 
