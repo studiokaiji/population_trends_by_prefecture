@@ -1,3 +1,39 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --foreground: hsl(0, 0%, 20%);
   --background: hsl(0, 0%, 95%);
@@ -6,10 +42,12 @@
   --secondary: hsl(0, 0%, 0%);
   --secondary-foreground: hsl(0, 0%, 100%);
   --paper: hsl(0, 0%, 100%);
-  --border: 1px solid hsl(0, 0%, 0%);
+  --border: 1px solid hsl(0, 0%, 90%);
 }
 
-html, body {
+html,
+body {
   background: var(--background);
   color: var(--foreground);
+  line-height: 1.25;
 }
