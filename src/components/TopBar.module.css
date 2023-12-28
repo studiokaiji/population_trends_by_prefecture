@@ -1,10 +1,10 @@
-.top-bar {
+.module {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
 }
 
-.top-bar .title-text {
+.title {
   font-weight: 600;
 }
