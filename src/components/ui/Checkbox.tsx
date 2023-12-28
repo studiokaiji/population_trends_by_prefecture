@@ -1,20 +1,33 @@
-import { type HTMLAttributes, useId } from "react";
-import "./Checkbox.css";
+import { type ChangeEvent, useId } from "react";
+import styles from "./Checkbox.module.css";
 
-type CheckboxProps = HTMLAttributes<HTMLInputElement> & {
+type CheckboxProps = {
   label?: string;
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?(event: ChangeEvent): void;
 };
 
-export const Checkbox = (props: CheckboxProps) => {
+export const Checkbox = ({
+  label,
+  checked,
+  defaultChecked,
+  onChange,
+}: CheckboxProps) => {
   const id = useId();
   return (
-    <div
-      id={props.id}
-      className={`checkbox-wrapper ${props.className || ""}`}
-      style={props.style}
-    >
-      <input {...props} id={id} type="checkbox" />
-      <label htmlFor={id}>{props.label}</label>
-    </div>
+    <span className={styles.module}>
+      <input
+        id={id}
+        type="checkbox"
+        className={styles.checkbox}
+        onChange={onChange}
+        checked={checked}
+        defaultChecked={defaultChecked}
+      />
+      <label htmlFor={id} className={styles.label}>
+        {label}
+      </label>
+    </span>
   );
 };
