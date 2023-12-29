@@ -22,8 +22,6 @@ export const resasFetcher = async (
     },
   });
 
-  const clonedRes = res.clone();
-
   if (res.status === 429) {
     throw tooManyRequestsError;
   }
@@ -36,6 +34,7 @@ export const resasFetcher = async (
 
   if (body === "400") {
     return new Response(JSON.stringify({ message: "Bad Request" }), {
+      ...res,
       status: 400,
     });
   }
@@ -52,6 +51,7 @@ export const resasFetcher = async (
     const statusCode = body.statusCode;
     if (statusCode === "400") {
       return new Response(JSON.stringify({ message: "Bad Request" }), {
+        ...res,
         status: 400,
       });
     }
@@ -64,7 +64,7 @@ export const resasFetcher = async (
   }
 
   if ("result" in body) {
-    return clonedRes;
+    return new Response(JSON.stringify(body), res);
   }
 
   throw unknownError;
