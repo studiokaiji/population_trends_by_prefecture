@@ -16,6 +16,5 @@ export const usePrefectures = () => {
 
       return body.result as PrefecturesResult;
     },
-    gcTime: 0,
   });
 };
