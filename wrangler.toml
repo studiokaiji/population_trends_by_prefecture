@@ -1,0 +1,3 @@
+kv_namespaces = [
+  { binding = "RESAS_CACHE_KV", id = "aba47a9c31c540b1a8e2b7dc1879a7ad", preview_id = "cc49db886c9e43f3ac66e1bdbe111d10" },
+]
