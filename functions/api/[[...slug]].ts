@@ -2,7 +2,7 @@ import { resasFetcher } from "#/services/resasFetcher";
 import { Hono } from "hono";
 import { cache } from "hono/cache";
 
-export const app = new Hono<{ Bindings: Bindigs }>().basePath("/api");
+export const app = new Hono<{ Bindings: Bindings }>().basePath("/api");
 
 app.get(
   "*",
