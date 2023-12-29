@@ -1,9 +1,9 @@
-import "@/App.css";
 import { TopBar } from "@/components/TopBar";
 import { storagePersister, queryClient } from "@/queryClient";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { Suspense } from "react";
 import { Prefectures } from "./components/Prefectures";
+import styles from "@/App.module.css";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             <TopBar />
           </nav>
           <div>
-            <h2 className="section-title">都道府県一覧</h2>
+            <h2 className={styles.section_title}>都道府県一覧</h2>
             <p>選択した都道府県の総人口推移が表示されます(複数選択可)</p>
             <Prefectures />
           </div>
