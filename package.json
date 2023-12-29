@@ -16,9 +16,9 @@
     "@tanstack/query-sync-storage-persister": "^5.14.2",
     "@tanstack/react-query": "^5.15.0",
     "@tanstack/react-query-persist-client": "^5.15.0",
+    "hono": "^3.11.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "hono": "^3.11.11"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",
@@ -37,6 +37,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "jsdom": "^23.0.1",
+    "miniflare": "^3.20231030.4",
     "prettier": "^3.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
