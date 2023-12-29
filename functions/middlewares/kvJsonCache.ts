@@ -25,7 +25,7 @@ export const kvJsonCache = (options?: {
         expirationTtl: options?.ttl || 2592000,
       });
 
-      if (!options.asyncCache) {
+      if (!options?.asyncCache) {
         await promise;
       } else {
         ctx.executionCtx.waitUntil(promise);
