@@ -3,6 +3,7 @@ import { MiddlewareHandler } from "hono";
 export const kvJsonCache = (options?: {
   name?: string;
   ttl?: number;
+  asyncCache?: boolean;
 }): MiddlewareHandler<{ Bindings: Bindings }> => {
   return async function kvCache(ctx, next) {
     const cacheKV = ctx.env.RESAS_CACHE_KV;
@@ -19,9 +20,16 @@ export const kvJsonCache = (options?: {
     if (ctx.res.ok) {
       const newRes = ctx.res.clone();
       const body = await newRes.json();
-      await cacheKV.put(key, JSON.stringify(body), {
+
+      const promise = cacheKV.put(key, JSON.stringify(body), {
         expirationTtl: options?.ttl || 2592000,
       });
+
+      if (!options.asyncCache) {
+        await promise;
+      } else {
+        ctx.executionCtx.waitUntil(promise);
+      }
     }
 
     return ctx.res;
