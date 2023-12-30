@@ -1,25 +1,28 @@
 import { TopBar } from "@/components/TopBar";
 import { storagePersister, queryClient } from "@/queryClient";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Prefectures } from "./components/Prefectures";
 import styles from "@/App.module.css";
 
 function App() {
+  const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
   return (
     <PersistQueryClientProvider
       client={queryClient}
       persistOptions={{ persister: storagePersister }}
     >
       <Suspense fallback={<div />}>
+        <nav>
+          <TopBar />
+        </nav>
         <div>
-          <nav>
-            <TopBar />
-          </nav>
           <div>
             <h2 className={styles.section_title}>都道府県一覧</h2>
-            <p>選択した都道府県の総人口推移が表示されます(複数選択可)</p>
-            <Prefectures />
+            <Prefectures
+              prefectures={prefectures}
+              onChangePrefectures={setPrefectures}
+            />
           </div>
         </div>
       </Suspense>
