@@ -17,4 +17,17 @@ app.get("/prefectures", async (ctx) => {
   return res;
 });
 
+app.get("/population-composition/:prefCode", async (ctx) => {
+  const prefCode = ctx.req.param("prefCode");
+  if (Number.isNaN(prefCode)) {
+    return ctx.json({ message: "Invalid prefCode" }, 400);
+  }
+
+  const res = await resasFetcher(
+    `/population/composition/perYear?prefCode=${prefCode}`,
+    ctx.env.RESAS_API_KEY,
+  );
+  return res;
+});
+
 export const onRequest = handle(app);
