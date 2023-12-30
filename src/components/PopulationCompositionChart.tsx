@@ -80,6 +80,7 @@ export const PopulationCompositionChart = ({
         {prefectures.map((prefecture) => {
           return (
             <Line
+              key={prefecture.prefCode}
               dataKey={prefecture.prefName}
               type="monotone"
               stroke={colors[(prefecture.prefCode % colors.length) - 1]}
