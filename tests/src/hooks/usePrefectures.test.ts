@@ -1,6 +1,6 @@
 import { usePrefectures } from "@/hooks/usePrefectures";
 import { renderHook, waitFor } from "@testing-library/react";
-import { createQueryWrapper } from "../../tools/createQueryWrapper";
+import { createQueryWrapper } from "~/tools/createQueryWrapper";
 import { MockedFunction, describe, expect, it, vi } from "vitest";
 
 const resultData = [
