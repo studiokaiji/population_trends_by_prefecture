@@ -1,4 +1,4 @@
-type ConvertedItem = {
+export type ConvertedItem = {
   [prefecture in string]: number;
 } & { year: number };
 
