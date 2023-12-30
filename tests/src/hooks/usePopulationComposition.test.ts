@@ -1,7 +1,7 @@
 import { usePopulationComposition } from "@/hooks/usePopulationComposition";
 import { renderHook, waitFor } from "@testing-library/react";
 import { beforeEach } from "node:test";
-import { MockedFunction, beforeAll, describe, expect, it, vi } from "vitest";
+import { MockedFunction, describe, expect, it, vi } from "vitest";
 import { createQueryWrapper } from "~/tools/createQueryWrapper";
 
 const fetchMock: MockedFunction<typeof fetch> = vi.fn();
