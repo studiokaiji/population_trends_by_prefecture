@@ -3,6 +3,8 @@ import { storagePersister, queryClient } from "@/queryClient";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { Suspense, useState } from "react";
 import { Prefectures } from "./components/Prefectures";
+import { Loading } from "./components/ui/Loading";
+import { ScreenCenter } from "./components/layout/ScreenCenter";
 import styles from "@/App.module.css";
 
 function App() {
@@ -12,10 +14,16 @@ function App() {
       client={queryClient}
       persistOptions={{ persister: storagePersister }}
     >
-      <Suspense fallback={<div />}>
-        <nav>
-          <TopBar />
-        </nav>
+      <nav>
+        <TopBar />
+      </nav>
+      <Suspense
+        fallback={
+          <ScreenCenter>
+            <Loading />
+          </ScreenCenter>
+        }
+      >
         <div>
           <div>
             <h2 className={styles.section_title}>都道府県一覧</h2>
