@@ -33,6 +33,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: population-trends-by-prefecture
+          workingDirectory: ./
           directory: ./dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
