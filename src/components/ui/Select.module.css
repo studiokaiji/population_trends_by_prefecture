@@ -5,4 +5,5 @@
   color: var(--foreground);
   padding: 0.5rem;
   border: 1px solid var(--secondary);
+  width: fit-content;
 }
