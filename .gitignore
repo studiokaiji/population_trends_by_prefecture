@@ -26,3 +26,6 @@ dist-ssr
 # wrangler
 .wrangler
 .dev.vars
+
+# rollup-plugin-visualizer
+stats.html
