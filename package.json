@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npx wrangler pages dev -- vite",
     "build": "tsc && vite build",
+    "functions:build": "cd functions && tsc",
     "lint": "eslint . --ext js,jsx,ts,tsx && prettier --check '**/*.{js,jsx,ts,tsx}'",
     "fix": "eslint . --fix --ext js,jsx,ts,tsx && prettier --write '**/*.{js,jsx,ts,tsx}'",
     "preview": "vite preview",
