@@ -29,8 +29,8 @@ function App() {
           </ScreenCenter>
         }
       >
-        <div>
-          <div>
+        <main className={styles.wrapper}>
+          <div className={styles.prefectures_wrapper}>
             <h2 className={styles.section_title}>都道府県一覧</h2>
             <Prefectures
               prefectures={prefectures}
@@ -47,7 +47,7 @@ function App() {
             prefectures={prefectures}
             dataType={dataType}
           />
-        </div>
+        </main>
       </Suspense>
     </PersistQueryClientProvider>
   );
