@@ -1,9 +1,9 @@
 import { Suspense, lazy, useState } from "react";
-import { Prefectures } from "./components/Prefectures";
-import { Select } from "./components/ui/Select";
-import { DATA_TYPES } from "./consts";
+import { Prefectures } from "@/components/Prefectures";
+import { Select } from "@/components/ui/Select";
+import { DATA_TYPES } from "@/consts";
 import styles from "@/App.module.css";
-import { Container } from "./components/Container";
+import { Container } from "@/components/Container";
 
 const PopulationCompositionChart = lazy(async () => {
   return {
