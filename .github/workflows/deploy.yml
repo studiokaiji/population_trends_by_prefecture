@@ -23,8 +23,11 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Build
+      - name: Build app
         run: yarn build
+
+      - name: Build functions
+        run: yarn functions:build
 
       - name: Publish to Cloudflare Pages
         id: cloudflare_pages_deploy
