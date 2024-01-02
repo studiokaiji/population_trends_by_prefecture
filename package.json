@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npx wrangler pages dev -- vite",
     "build": "tsc && vite build",
+    "functions:build": "cd functions && tsc",
     "lint": "eslint . --ext js,jsx,ts,tsx && prettier --check '**/*.{js,jsx,ts,tsx}'",
     "fix": "eslint . --fix --ext js,jsx,ts,tsx && prettier --write '**/*.{js,jsx,ts,tsx}'",
     "preview": "vite preview",
@@ -40,6 +41,7 @@
     "jsdom": "^23.0.1",
     "miniflare": "^3.20231030.4",
     "prettier": "^3.1.1",
+    "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.1.0"
