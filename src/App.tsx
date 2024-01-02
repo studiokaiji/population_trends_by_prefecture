@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Prefectures } from "./components/Prefectures";
-import { PopulationCompositionChart } from "./components/PopulationCompositionChart";
 import { Select } from "./components/ui/Select";
 import { DATA_TYPES } from "./consts";
 import styles from "@/App.module.css";
 import { Container } from "./components/Container";
+
+const PopulationCompositionChart = lazy(async () => {
+  return {
+    default: (await import("@/components/PopulationCompositionChart"))
+      .PopulationCompositionChart,
+  };
+});
 
 function App() {
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
@@ -26,10 +32,14 @@ function App() {
           }))}
           onSelect={setDataType}
         />
-        <PopulationCompositionChart
-          prefectures={prefectures}
-          dataType={dataType}
-        />
+        <Suspense>
+          {prefectures.length > 0 && (
+            <PopulationCompositionChart
+              prefectures={prefectures}
+              dataType={dataType}
+            />
+          )}
+        </Suspense>
       </main>
     </Container>
   );
