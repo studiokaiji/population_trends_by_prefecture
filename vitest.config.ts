@@ -9,6 +9,12 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     include: ["tests/**/*.test.{js,ts,jsx,tsx}"],
+    coverage: {
+      include: ["src/**/*.{js,ts}"],
+      exclude: ["src/**/__mocks__/**"],
+      all: true,
+      reporter: ["html", "clover", "text"],
+    },
   },
   resolve: {
     alias: {

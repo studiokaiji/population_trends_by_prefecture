@@ -1,9 +1,5 @@
 import App from "@/App";
-import {
-  RenderResult,
-  render,
-  waitFor,
-} from "@testing-library/react";
+import { RenderResult, render, waitFor } from "@testing-library/react";
 import { describe, vi, it, expect, beforeEach, Mock } from "vitest";
 import { usePrefectures } from "@/hooks/usePrefectures";
 import { DATA_TYPES } from "@/consts";
